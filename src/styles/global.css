@@ -60,13 +60,7 @@ body::before {
 }
 
 .tilt-card {
-  transform-style: preserve-3d;
-  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  transition: transform 0.1s ease-out;
-}
-
-.tilt-card > * {
-  transform-style: preserve-3d;
-  transform: translateZ(10px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
