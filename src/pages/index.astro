@@ -89,7 +89,7 @@ const projects: Project[] = [
     </section>
 
     <section class="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div class="rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
+      <div class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
         <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="about.title">Sobre mí</h2>
         <p>
           <span class="hl" data-i18n="about.p1_hl">Grado Superior en Desarrollo de Aplicaciones Web (DAW, 2026)</span>
@@ -109,7 +109,7 @@ const projects: Project[] = [
         </p>
       </div>
 
-      <div class="rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
+      <div class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
         <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="stack.title">Stack tecnológico</h2>
         <ul class="m-0 mt-4 flex list-none flex-wrap gap-2 p-0">
           {skills.map((skill) => (
@@ -121,12 +121,12 @@ const projects: Project[] = [
       </div>
     </section>
 
-    <section id="proyectos" class="rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
+    <section id="proyectos" class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
       <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="projects.title">Proyectos</h2>
       <div class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           projects.map((project) => (
-            <article class="rounded-[12px] border border-lila/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-lila/25">
+            <article class="tilt-card rounded-[12px] border border-lila/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-lila/25">
               <h3 class="m-0 mb-1.5 text-[1rem] font-semibold">{project.title}</h3>
               <p class="m-0 text-[0.9rem] leading-relaxed text-muted">{project.description}</p>
               <ul class="small m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
@@ -141,7 +141,7 @@ const projects: Project[] = [
       </div>
     </section>
 
-    <section id="contacto" class="flex flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
+    <section id="contacto" class="tilt-card flex flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
       <div>
         <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="contact.title">Contacto</h2>
         <p class="m-0 max-w-[60ch] leading-relaxed text-muted">
@@ -196,7 +196,24 @@ const projects: Project[] = [
   document.addEventListener('DOMContentLoaded', () => {
     applyLang(currentLang);
     updateLangButtons(currentLang);
+    initTilt();
   });
 
   window.switchLang = switchLang;
+
+  function initTilt() {
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        card.style.setProperty('--rx', `${(y - 0.5) * -8}deg`);
+        card.style.setProperty('--ry', `${(x - 0.5) * 8}deg`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
 </script>
