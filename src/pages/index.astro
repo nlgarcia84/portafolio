@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: 'Roomy — App de reservas',
     description:
-      'Proyecto final de DAW. Aplicación web de reserva de salas de reuniones con frontend en Next.js + Tailwind, backend en Spring Boot y Supabase.',
+      'Proyecto final de DAW en grupo de 4 desarrolladores. Junto con un compañero me encargué del frontend con Next.js y Tailwind. Aplicación web de reserva de salas de reuniones con backend en Spring Boot y Supabase.',
     stack: ['Next.js', 'Tailwind', 'Supabase', 'Spring Boot', 'Java'],
     href: 'https://reservesapp-frontend.vercel.app/',
   },
@@ -59,13 +59,13 @@ const projects: Project[] = [
       style={`--portrait-src: url(${normanImage.src})`}
     >
       <div class="hero-copy">
-        <p class="eyebrow">Fullstack Developer · Barcelona</p>
+        <p class="eyebrow"><span class="hl">Fullstack Developer</span> · Barcelona</p>
         <h1>Norman Leyva</h1>
         <p class="lead">
           Junior Fullstack Web Developer con transición a tecnología en 2022.
-          Experiencia en frontend y backend con JavaScript, React, Node.js y
-          APIs REST. Formación en Marketing y ADE con fuerte enfoque en el
-          usuario.
+          Experiencia en frontend y backend con <span class="hl">JavaScript</span>,
+          <span class="hl">React</span>, Node.js y APIs REST. Formación en
+          Marketing y ADE con fuerte enfoque en el usuario.
         </p>
         <div class="actions">
           <a class="primary" href="#proyectos">Ver proyectos</a>
@@ -78,20 +78,20 @@ const projects: Project[] = [
       <div class="card">
         <h2>Sobre mí</h2>
         <p>
-          <strong>Grado Superior en Desarrollo de Aplicaciones Web (DAW, 2026)</strong>
-          con experiencia en frontend y backend.
+          <span class="hl">Grado Superior en Desarrollo de Aplicaciones Web (DAW, 2026)</span>
+          cursado en el Institut Obert de Catalunya.
         </p>
         <p>
-          Tras una década en atención al cliente en <strong>Adeslas</strong>,
-          di el salto a la tecnología cursando un bootcamp en
-          <strong>Ironhack</strong> y especializándome después en desarrollo
-          web. Mi background en <strong>Marketing y ADE</strong> me aporta una
-          visión estratégica y centrada en el usuario.
+          Licenciado en ADE y Marketing Digital, aunque finalmente no ejercí.
+          Me decanté por el sector tech cursando un bootcamp en Ironhack y
+          especializándome después en desarrollo web. Mi formación de
+          gestión y marketing me aporta una visión estratégica y centrada en el
+          usuario.
         </p>
         <p>
-          Mis <strong>42 años</strong> me han desarrollado habilidades blandas
-          como <strong>comunicación, trabajo en equipo, resolución de problemas
-          y adaptabilidad</strong>.
+          Mis <span class="hl">42 años</span> me han desarrollado habilidades
+          blandas como comunicación, trabajo en equipo, resolución de problemas
+          y adaptabilidad.
         </p>
       </div>
 
@@ -293,6 +293,13 @@ const projects: Project[] = [
     margin: 0 0 0.75rem;
     font-size: 1.1rem;
     font-weight: 600;
+  }
+
+  .hl {
+    color: #fff;
+    background: linear-gradient(to top, rgba(167, 139, 250, 0.5) 35%, transparent 35%);
+    font-weight: 500;
+    padding: 0 2px;
   }
 
   .chips {
