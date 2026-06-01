@@ -166,7 +166,7 @@ const projects: Project[] = [
     if (stored) return stored;
     const browserLang = navigator.language?.slice(0, 2);
     if (['es', 'ca', 'en'].includes(browserLang)) return browserLang;
-    return 'es';
+    return 'en';
   }
 
   let currentLang = getDefaultLang();
