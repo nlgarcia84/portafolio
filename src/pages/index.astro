@@ -64,9 +64,10 @@ const projects: Project[] = [
       class="tilt-card relative isolate grid min-h-[380px] grid-cols-1 gap-8 overflow-hidden rounded-[12px] bg-transparent p-8 md:grid-cols-[1fr_auto] md:p-16"
       style={`--portrait-src: url(${normanImage.src})`}
     >
-      <div class="absolute inset-[-40px] -z-10 rounded-none"
-        style="background: linear-gradient(135deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.55) 100%), var(--portrait-src); background-position: center; background-size: cover;">
+      <div class="absolute inset-[-40px] -z-20 rounded-none"
+        style="background: var(--portrait-src); background-position: center; background-size: cover;">
       </div>
+      <div class="absolute inset-0 -z-10 bg-black/20 backdrop-blur-[6px]"></div>
 
       <div class="flex min-w-0 flex-col justify-center">
         <p class="mb-4 text-[0.75rem] font-medium uppercase tracking-[0.12em] text-lila">
