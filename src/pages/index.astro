@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import normanImage from '../assets/norman.png';
+import { Image } from 'astro:assets';
+import normanphoto from '../assets/norman_photo.png';
 
 type Project = {
   title: string;
@@ -19,6 +20,8 @@ const skills: Skill[] = [
   { name: 'CSS3', icon: 'devicon-css3-plain' },
   { name: 'JavaScript', icon: 'devicon-javascript-plain' },
   { name: 'React', icon: 'devicon-react-original' },
+  { name: 'Astro', icon: 'devicon-astro-plain' },
+  { name: 'Next.js', icon: 'devicon-nextjs-original' },
   { name: 'Node.js', icon: 'devicon-nodejs-plain' },
   { name: 'Express', icon: 'devicon-express-original' },
   { name: 'MySQL', icon: 'devicon-mysql-original' },
@@ -33,16 +36,16 @@ const skills: Skill[] = [
 
 const projects: Project[] = [
   {
-    title: 'Web Corporativa — RC Technology',
+    title: 'Corporate Website — RC Technology',
     description:
-      'Web corporativa desarrollada durante las prácticas como Fullstack Developer Intern. Maquetación con Astro y Tailwind, backend con Supabase.',
+      'Corporate website developed during my Fullstack Developer internship. Built with Astro and Tailwind, backend with Supabase.',
     stack: ['Astro', 'Tailwind', 'Supabase', 'JavaScript', 'Git'],
     href: 'https://www.rctechnology.es/',
   },
   {
-    title: 'Roomy — App de reservas',
+    title: 'Roomy — Booking app',
     description:
-      'Proyecto final de DAW en grupo de 4 desarrolladores. Junto con un compañero me encargué del frontend con Next.js y Tailwind. Aplicación web de reserva de salas de reuniones con backend en Spring Boot y Supabase.',
+      'Final DAW project in a group of 4 developers. With a teammate I was in charge of the frontend with Next.js and Tailwind. Web app for booking meeting rooms with a Spring Boot and Supabase backend.',
     stack: ['Next.js', 'Tailwind', 'Supabase', 'Spring Boot', 'Java'],
     href: 'https://reservesapp-frontend.vercel.app/',
   },
@@ -55,66 +58,71 @@ const projects: Project[] = [
 >
   <main class="mx-auto grid max-w-[1100px] gap-6 px-6 py-16 md:py-20">
     <div class="flex justify-end gap-2">
-      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-lila/40 hover:text-lila-light data-[active=true]:border-lila/40 data-[active=true]:text-lila-light" data-lang="es" onclick="switchLang('es')">ES</button>
-      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-lila/40 hover:text-lila-light data-[active=true]:border-lila/40 data-[active=true]:text-lila-light" data-lang="ca" onclick="switchLang('ca')">CA</button>
-      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-lila/40 hover:text-lila-light data-[active=true]:border-lila/40 data-[active=true]:text-lila-light" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light" data-lang="es" onclick="switchLang('es')">ES</button>
+      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light" data-lang="ca" onclick="switchLang('ca')">CA</button>
+      <button class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light" data-lang="en" onclick="switchLang('en')">EN</button>
     </div>
 
-    <section
-      class="tilt-card relative isolate grid min-h-[380px] grid-cols-1 gap-8 overflow-hidden rounded-[12px] bg-transparent p-8 md:grid-cols-[1fr_auto] md:p-16"
-      style={`--portrait-src: url(${normanImage.src})`}
-    >
-      <div class="absolute inset-[-40px] -z-20 rounded-none"
-        style="background: var(--portrait-src); background-position: center; background-size: cover;">
-      </div>
-      <div class="absolute inset-0 -z-10 bg-bg/85 backdrop-blur-[4px]"></div>
-
+    <section class="tilt-card relative isolate grid min-h-[380px] grid-cols-1 gap-10 overflow-hidden rounded-[8px] bg-transparent p-8 md:grid-cols-[1fr_auto] md:items-center md:p-16">
       <div class="flex min-w-0 flex-col justify-center">
-        <p class="mb-4 text-[0.75rem] font-medium uppercase tracking-[0.12em] text-lila">
+        <p class="mb-4 text-[0.75rem] font-medium uppercase tracking-[0.12em] text-faint">
           <span class="hl">Fullstack Developer</span><span data-i18n="hero.eyebrow_suffix"> · Barcelona</span>
         </p>
         <h1 class="m-0 max-w-[14ch] text-[clamp(2.2rem,5vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]" data-i18n="hero.title">
           Norman Leyva
         </h1>
         <p class="mt-5 max-w-[58ch] text-[1.05rem] leading-relaxed text-muted">
-          <span data-i18n="hero.lead1">Junior Fullstack Web Developer con transición a tecnología en 2022. Experiencia en frontend y backend con</span>
+          <span data-i18n="hero.lead1">Junior Fullstack Web Developer transitioning to tech in 2022. Experience in frontend and backend with</span>
           <span class="hl">JavaScript</span>,
           <span class="hl">React</span>
-          <span data-i18n="hero.lead2">, Node.js y APIs REST. Formación en Marketing y ADE con fuerte enfoque en el usuario.</span>
+          <span data-i18n="hero.lead2">, Node.js and REST APIs. Background in Marketing and Business Management with a strong user focus.</span>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a class="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black no-underline opacity-100 transition-opacity hover:opacity-80" href="#proyectos" data-i18n="hero.btn.projects">Ver proyectos</a>
-          <a class="rounded-full border border-[rgba(255,255,255,0.1)] bg-transparent px-5 py-2.5 text-sm font-medium text-text no-underline transition-all hover:border-white/25 hover:bg-white/5" href="#contacto" data-i18n="hero.btn.contact">Contactar</a>
+          <a class="rounded-md bg-white px-5 py-2.5 text-sm font-medium text-black no-underline opacity-100 transition-opacity hover:opacity-80" href="#proyectos" data-i18n="hero.btn.projects">View projects</a>
+          <a class="rounded-md border border-[rgba(255,255,255,0.1)] bg-transparent px-5 py-2.5 text-sm font-medium text-text no-underline transition-all hover:border-vblue/25 hover:bg-white/5" href="#contacto" data-i18n="hero.btn.contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="rounded-[24px] border border-white/10 bg-bg p-2 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_8px_24px_rgba(0,0,0,0.6)]">
+          <Image
+            src={normanphoto}
+            alt="Norman Leyva"
+            width={280}
+            height={280}
+            class="block h-[280px] w-[280px] bg-bg rounded-[16px] object-cover"
+            quality={80}
+            format="webp"
+          />
         </div>
       </div>
     </section>
 
     <section class="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
-        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="about.title">Sobre mí</h2>
+      <div class="tilt-card rounded-[8px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25">
+        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="about.title">About me</h2>
         <p>
-          <span class="hl" data-i18n="about.p1_hl">Grado Superior en Desarrollo de Aplicaciones Web (DAW, 2026)</span>
-          <span data-i18n="about.p1_rest"> cursado en el Institut Obert de Catalunya.</span>
+          <span class="hl" data-i18n="about.p1_hl">Higher Degree in Web Application Development (DAW, 2026)</span>
+          <span data-i18n="about.p1_rest"> at Institut Obert de Catalunya.</span>
         </p>
         <p class="mt-3 leading-relaxed text-muted" data-i18n="about.p2">
-          Licenciado en ADE y Marketing Digital, aunque finalmente no ejercí.
-          Me decanté por el sector tech cursando un bootcamp en Ironhack y
-          especializándome después en desarrollo web. Mi formación de
-          gestión y marketing me aporta una visión estratégica y centrada en el
-          usuario.
+          Graduated in Business Management and Digital Marketing, though I
+          ultimately did not practice. I moved into tech through a bootcamp at
+          Ironhack and later specialized in web development. My management and
+          marketing background gives me a strategic, user-centered perspective.
         </p>
         <p class="mt-3 leading-relaxed text-muted">
-          <span data-i18n="about.p3_pre">Mis</span>
-          <span class="hl" data-i18n="about.p3_hl">42 años</span>
-          <span data-i18n="about.p3_post"> me han desarrollado habilidades blandas como comunicación, trabajo en equipo, resolución de problemas y adaptabilidad.</span>
+          <span data-i18n="about.p3_pre">My</span>
+          <span class="hl" data-i18n="about.p3_hl">42 years</span>
+          <span data-i18n="about.p3_post"> have developed soft skills such as communication, teamwork, problem-solving, and adaptability.</span>
         </p>
       </div>
 
-      <div class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
-        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="stack.title">Stack tecnológico</h2>
+      <div class="tilt-card rounded-[8px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25">
+        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="stack.title">Tech stack</h2>
         <ul class="m-0 mt-4 flex list-none flex-wrap gap-2 p-0">
           {skills.map((skill) => (
-            <li class="inline-flex items-center gap-1.5 rounded-md border border-lila/20 bg-lila/10 px-2.5 py-1 text-sm font-medium text-lila-light">
+            <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
               <i class={skill.icon}></i> {skill.name}
             </li>
           ))}
@@ -122,37 +130,37 @@ const projects: Project[] = [
       </div>
     </section>
 
-    <section id="proyectos" class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
-      <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="projects.title">Proyectos</h2>
+    <section id="proyectos" class="tilt-card rounded-[8px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25">
+      <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="projects.title">Projects</h2>
       <div class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
         {
-          projects.map((project) => (
-            <article class="tilt-card rounded-[12px] border border-lila/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-lila/25">
-              <h3 class="m-0 mb-1.5 text-[1rem] font-semibold">{project.title}</h3>
-              <p class="m-0 text-[0.9rem] leading-relaxed text-muted">{project.description}</p>
-              <ul class="small m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
+          projects.map((project, i) => (
+            <article class="tilt-card rounded-[8px] border border-white/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-vblue/25">
+              <h3 class="m-0 mb-1.5 text-[1rem] font-semibold" data-i18n={`projects.t${i}.title`}>{project.title}</h3>
+              <p class="m-0 text-[0.9rem] leading-relaxed text-muted" data-i18n={`projects.t${i}.desc`}>{project.description}</p>
+              <ul class="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
                 {project.stack.map((item) => (
-                  <li class="inline-flex items-center gap-1.5 rounded-md border border-lila/20 bg-lila/10 px-2.5 py-1 text-sm font-medium text-lila-light">{item}</li>
+                  <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">{item}</li>
                 ))}
               </ul>
-              <a class="mt-3 inline-block text-[0.85rem] font-medium text-muted no-underline transition-colors hover:text-lila-light" href={project.href} target="_blank" rel="noopener" data-i18n="projects.link">Visitar proyecto</a>
+              <a class="mt-3 inline-block text-[0.85rem] font-medium text-muted no-underline transition-colors hover:text-vblue-light" href={project.href} target="_blank" rel="noopener" data-i18n="projects.link">Visit project</a>
             </article>
           ))
         }
       </div>
     </section>
 
-    <section id="contacto" class="tilt-card flex flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-lila/25">
+    <section id="contacto" class="tilt-card flex flex-wrap items-center justify-between gap-4 rounded-[8px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25">
       <div>
-        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="contact.title">Contacto</h2>
+        <h2 class="m-0 mb-3 text-[1.1rem] font-semibold" data-i18n="contact.title">Contact</h2>
         <p class="m-0 max-w-[60ch] leading-relaxed text-muted">
-          <span data-i18n="contact.text">¿Quieres contactarme? Escríbeme a</span>
-          <a class="text-muted no-underline transition-colors hover:text-lila-light" href="mailto:nleyvagarcia1@icloud.com">nleyvagarcia1@icloud.com</a>.
+          <span data-i18n="contact.text">Want to get in touch? Email me at</span>
+          <a class="text-muted no-underline transition-colors hover:text-vblue-light" href="mailto:nleyvagarcia1@icloud.com">nleyvagarcia1@icloud.com</a>.
         </p>
       </div>
       <div class="flex gap-3">
-        <a class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-lila/40 hover:text-lila-light" href="https://linkedin.com/in/norman-leyva" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-lila/40 hover:text-lila-light" href="https://github.com/nlgarcia84" target="_blank" rel="noopener">GitHub</a>
+        <a class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-vblue/40 hover:text-vblue-light" href="https://linkedin.com/in/norman-leyva" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-vblue/40 hover:text-vblue-light" href="https://github.com/nlgarcia84" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
@@ -163,10 +171,7 @@ const projects: Project[] = [
 
   function getDefaultLang() {
     const stored = localStorage.getItem('lang');
-    if (stored) return stored;
-    const browserLang = navigator.language?.slice(0, 2);
-    if (['es', 'ca', 'en'].includes(browserLang)) return browserLang;
-    return 'en';
+    return stored ?? 'en';
   }
 
   let currentLang = getDefaultLang();
