@@ -16,22 +16,22 @@ type Skill = {
 };
 
 const skills: Skill[] = [
-  { name: 'HTML5', icon: 'devicon-html5-plain' },
-  { name: 'CSS3', icon: 'devicon-css3-plain' },
-  { name: 'JavaScript', icon: 'devicon-javascript-plain' },
-  { name: 'React', icon: 'devicon-react-original' },
-  { name: 'Astro', icon: 'devicon-astro-plain' },
-  { name: 'Next.js', icon: 'devicon-nextjs-original' },
-  { name: 'Node.js', icon: 'devicon-nodejs-plain' },
-  { name: 'Express', icon: 'devicon-express-original' },
-  { name: 'MySQL', icon: 'devicon-mysql-original' },
-  { name: 'MongoDB', icon: 'devicon-mongodb-plain' },
-  { name: 'Git/GitHub', icon: 'devicon-github-original' },
-  { name: 'REST APIs', icon: 'devicon-postman-plain' },
-  { name: 'Responsive Design', icon: 'devicon-chrome-plain' },
-  { name: 'Agile', icon: 'devicon-jira-plain' },
-  { name: 'GitHub Copilot', icon: 'devicon-github-original' },
-  { name: 'OpenCode', icon: 'devicon-vscode-plain' },
+  { name: 'HTML5', icon: '/icons/html5-original.svg' },
+  { name: 'CSS3', icon: '/icons/css3-original.svg' },
+  { name: 'JavaScript', icon: '/icons/javascript-original.svg' },
+  { name: 'React', icon: '/icons/react-original.svg' },
+  { name: 'Astro', icon: '/icons/astro-original.svg' },
+  { name: 'Next.js', icon: '/icons/nextjs-original.svg' },
+  { name: 'Node.js', icon: '/icons/nodejs-plain.svg' },
+  { name: 'Express', icon: '/icons/express-original.svg' },
+  { name: 'MySQL', icon: '/icons/mysql-original.svg' },
+  { name: 'MongoDB', icon: '/icons/mongodb-plain.svg' },
+  { name: 'Git/GitHub', icon: '/icons/github-original.svg' },
+  { name: 'REST APIs', icon: '/icons/postman-original.svg' },
+  { name: 'Responsive Design', icon: '/icons/chrome-original.svg' },
+  { name: 'Agile', icon: '/icons/jira-original.svg' },
+  { name: 'GitHub Copilot', icon: '/icons/github-original.svg' },
+  { name: 'OpenCode', icon: '/icons/vscode-original.svg' },
 ];
 
 const projects: Project[] = [
@@ -123,7 +123,7 @@ const projects: Project[] = [
         <ul class="m-0 mt-4 flex list-none flex-wrap gap-2 p-0">
           {skills.map((skill) => (
             <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
-              <i class={skill.icon}></i> {skill.name}
+              <img src={skill.icon} alt="" width="18" height="18" class="h-[18px] w-[18px]" /> {skill.name}
             </li>
           ))}
         </ul>
