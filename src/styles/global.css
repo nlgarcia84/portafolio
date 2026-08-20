@@ -38,3 +38,22 @@ body::before {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+.neubox {
+  background: linear-gradient(145deg, #1b1b1f, #09090b);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.85),
+    -8px -8px 20px rgba(255, 255, 255, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.neubox:hover {
+  box-shadow:
+    6px 6px 14px rgba(0, 0, 0, 0.75),
+    -6px -6px 14px rgba(255, 255, 255, 0.06),
+    0 0 25px rgba(59, 130, 246, 0.12);
+}
