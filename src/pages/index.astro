@@ -2,13 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import normanphoto from "../assets/norman_photo.png";
-
-type Project = {
-  title: string;
-  description: string;
-  stack: string[];
-  href: string;
-};
+import ProjectCard from "../components/ProjectCard.astro";
 
 type Skill = {
   name: string;
@@ -31,6 +25,14 @@ const skills: Skill[] = [
   { name: "GitHub Copilot", icon: "devicon-github-original" },
   { name: "OpenCode", icon: "devicon-vscode-plain" },
 ];
+
+type Project = {
+  image?: string;
+  title: string;
+  description: string;
+  stack: string[];
+  href: string;
+};
 
 const projects: Project[] = [
   {
@@ -218,51 +220,7 @@ const projects: Project[] = [
       <div class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           projects.map((project, i) => (
-            <article class="group tilt-card rounded-[12px] border border-white/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-vblue/25">
-              <h3
-                class="m-0 mb-1.5 text-[1rem] font-semibold"
-                data-i18n={`projects.t${i}.title`}
-              >
-                {project.title}
-              </h3>
-              <p
-                class="m-0 text-[0.9rem] leading-relaxed text-muted"
-                data-i18n={`projects.t${i}.desc`}
-              >
-                {project.description}
-              </p>
-              <ul class="small m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
-                {project.stack.map((item) => (
-                  <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a
-                class="group/btn relative mt-6 flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:scale-[1.02] hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98]"
-                href={project.href}
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full" />
-                <span class="relative" data-i18n="projects.link">
-                  Visit project
-                </span>
-                <svg
-                  class="relative h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </a>
-            </article>
+            <ProjectCard project={project} index={i} />
           ))
         }
       </div>
