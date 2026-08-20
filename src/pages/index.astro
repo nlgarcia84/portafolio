@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import normanphoto from "../assets/norman_photo.png";
-import khaledphoto from "../assets/projects/khaledhuerta.png";
-import rctechnologyphoto from "../assets/projects/rctechnology.png";
-import revlyphoto from "../assets/projects/revlyapp.png";
-import roomyphoto from "../assets/projects/roomyapp.png";
+import khaledhuerta from "../assets/projects/khaledhuerta.png";
+import rctechnology from "../assets/projects/rctechnology.png";
+import revly from "../assets/projects/revlyapp.png";
+import roomy from "../assets/projects/roomyapp.png";
 import ProjectCard from "../components/ProjectCard.astro";
+import type { Project } from "../types";
 
 type Skill = {
   name: string;
@@ -30,11 +31,9 @@ const skills: Skill[] = [
   { name: "OpenCode", icon: "devicon-vscode-plain" },
 ];
 
-import type { Project } from "../types";
-
 const projects: Project[] = [
   {
-    image: rctechnologyphoto,
+    image: rctechnology,
     title: "Corporate Website — RC Technology",
     description:
       "Corporate website developed during my Fullstack Developer internship. Built with Astro and Tailwind, backend with Supabase.",
@@ -42,7 +41,7 @@ const projects: Project[] = [
     href: "https://www.rctechnology.es/",
   },
   {
-    image: roomyphoto,
+    image: roomy,
     title: "Roomy — Booking app",
     description:
       "Final DAW project in a group of 4 developers. With a teammate I was in charge of the frontend with Next.js and Tailwind. Web app for booking meeting rooms with a Spring Boot and Supabase backend.",
@@ -50,7 +49,7 @@ const projects: Project[] = [
     href: "https://reservesapp-frontend.vercel.app/",
   },
   {
-    image: revlyphoto,
+    image: revly,
     title: "Revly — SaaS",
     description:
       "SaaS for online reputation management. Automates Google review requests via QR codes, email and invoices, and replies to every review with AI-generated, personalized responses, backed by analytics and score trend tracking.",
@@ -58,7 +57,7 @@ const projects: Project[] = [
     href: "https://revly.es/",
   },
   {
-    image: khaledphoto,
+    image: khaledhuerta,
     title: "Sheij Khaled Huerta — Islamic Education Platform",
     description:
       "Web platform dedicated to the teaching and dissemination of Islam in Spanish, featuring educational content, articles, audio lectures, khutbahs, a library, and an events calendar.",
