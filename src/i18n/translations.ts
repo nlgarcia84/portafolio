@@ -7,7 +7,7 @@ const es = {
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
   "hero.lead1":
-    "Junior Fullstack Web Developer con transición a tecnología en 2022. Experiencia en frontend y backend con",
+    "Fullstack Web Developer con transición a tecnología en 2022. Experiencia en frontend y backend con",
   "hero.lead2":
     ", Node.js y APIs REST. Formación en Marketing y ADE con fuerte enfoque en el usuario.",
   "hero.btn.projects": "Ver proyectos",
@@ -21,9 +21,13 @@ const es = {
   "about.p3_hl": "42 años",
   "about.p3_post":
     " me han desarrollado habilidades blandas como comunicación, trabajo en equipo, resolución de problemas y adaptabilidad.",
-  "stack.title": "Stack tecnológico",
+  "stack.title": "Tech skills",
   "projects.title": "Proyectos",
   "projects.link": "Visitar proyecto",
+  "projects.stack": "Stack tecnológico",
+  "projects.stack.frontend": "Frontend",
+  "projects.stack.backend": "Backend",
+  "projects.stack.other": "Otros",
   "projects.t0.title": "Web Corporativa — RC Technology",
   "projects.t0.desc":
     "Web corporativa desarrollada durante las prácticas como Fullstack Developer Intern. Maquetación con Astro y Tailwind, backend con Supabase.",
@@ -47,7 +51,7 @@ const ca = {
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
   "hero.lead1":
-    "Junior Fullstack Web Developer amb transició a tecnologia el 2022. Experiència en frontend i backend amb",
+    "Fullstack Web Developer amb transició a tecnologia el 2022. Experiència en frontend i backend amb",
   "hero.lead2":
     ", Node.js i APIs REST. Formació en Màrqueting i ADE amb fort enfocament en l'usuari.",
   "hero.btn.projects": "Veure projectes",
@@ -62,9 +66,13 @@ const ca = {
   "about.p3_hl": "42 anys",
   "about.p3_post":
     " m'han desenvolupat habilitats toves com comunicació, treball en equip, resolució de problemes i adaptabilitat.",
-  "stack.title": "Stack tecnològic",
+  "stack.title": "Tech skills",
   "projects.title": "Projectes",
   "projects.link": "Visitar projecte",
+  "projects.stack": "Stack tecnològic",
+  "projects.stack.frontend": "Frontend",
+  "projects.stack.backend": "Backend",
+  "projects.stack.other": "Altres",
   "projects.t0.title": "Web Corporativa — RC Technology",
   "projects.t0.desc":
     "Web corporativa desenvolupada durant les pràctiques com a Fullstack Developer Intern. Maquetació amb Astro i Tailwind, backend amb Supabase.",
@@ -88,7 +96,7 @@ const en = {
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
   "hero.lead1":
-    "Junior Fullstack Web Developer transitioning to tech in 2022. Experience in frontend and backend with",
+    "Fullstack Web Developer transitioning to tech in 2022. Experience in frontend and backend with",
   "hero.lead2":
     ", Node.js and REST APIs. Background in Marketing and Business Management with a strong user focus.",
   "hero.btn.projects": "View projects",
@@ -105,6 +113,10 @@ const en = {
   "stack.title": "Tech stack",
   "projects.title": "Projects",
   "projects.link": "Visit project",
+  "projects.stack": "Tech Stack",
+  "projects.stack.frontend": "Frontend",
+  "projects.stack.backend": "Backend",
+  "projects.stack.other": "Other",
   "projects.t0.title": "Corporate Website — RC Technology",
   "projects.t0.desc":
     "Corporate website developed during my Fullstack Developer internship. Built with Astro and Tailwind, backend with Supabase.",

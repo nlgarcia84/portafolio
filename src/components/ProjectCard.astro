@@ -2,6 +2,20 @@
 import { Image } from "astro:assets";
 import type { Project } from "../types";
 
+const stackIcons: Record<string, string> = {
+  Astro: "/icons/astro-original.svg",
+  Tailwind: "/icons/tailwindcss-original.svg",
+  "Tailwind CSS": "/icons/tailwindcss-original.svg",
+  Supabase: "/icons/supabase-original.svg",
+  JavaScript: "/icons/javascript-original.svg",
+  Git: "/icons/github-original.svg",
+  "Next.js": "/icons/nextjs-original.svg",
+  "Spring Boot": "/icons/spring-original.svg",
+  Java: "/icons/java-original.svg",
+  TypeScript: "/icons/typescript-original.svg",
+  AI: "/icons/ai-openai.svg",
+};
+
 interface Props {
   project: Project;
   index?: number;
@@ -34,15 +48,46 @@ const { project, index = 0 } = Astro.props;
     >
       {project.description}
     </p>
-    <ul class="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
-      {
-        project.stack.map((item) => (
-          <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
-            {item}
-          </li>
-        ))
-      }
-    </ul>
+    <p
+      class="m-0 mb-1 mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted"
+      data-i18n="projects.stack"
+    >
+      Tech Stack
+    </p>
+    {
+      (["frontend", "backend", "other"] as const).map((group) =>
+        project.stack[group].length > 0 ? (
+          <div class="mt-2">
+            <p
+              class="m-0 mb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-vblue-light/80"
+              data-i18n={`projects.stack.${group}`}
+            >
+              {group}
+            </p>
+            <ul class="m-0 flex list-none flex-wrap gap-1.5 p-0">
+              {project.stack[group].map((item) => (
+                <li
+                  class="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[0.75rem] font-medium text-text/80"
+                  title={item}
+                >
+                  {stackIcons[item] && (
+                    <img
+                      src={stackIcons[item]}
+                      alt=""
+                      width="14"
+                      height="14"
+                      class="h-[14px] w-[14px] shrink-0"
+                      loading="lazy"
+                    />
+                  )}
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null,
+      )
+    }
     <a
       class="group/btn relative mt-6 flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:scale-[1.02] hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98]"
       href={project.href}
