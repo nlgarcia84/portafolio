@@ -7,6 +7,7 @@ import rctechnology from "../assets/projects/rctechnology.png";
 import revly from "../assets/projects/revlyapp.png";
 import roomy from "../assets/projects/roomyapp.png";
 import ProjectCard from "../components/ProjectCard.astro";
+import BaseCard from "../components/BaseCard.astro";
 import type { Project } from "../types";
 
 type Skill = {
@@ -45,7 +46,7 @@ const projects: Project[] = [
     stack: {
       frontend: ["Astro", "Tailwind", "TypeScript"],
       backend: ["Supabase"],
-      other: ["Git"],
+      other: [],
     },
     href: "https://www.rctechnology.es/",
   },
@@ -171,12 +172,7 @@ const projects: Project[] = [
     </section>
 
     <section class="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div
-        class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25"
-      >
-        <h2 class="m-0 mb-3 text-[2rem] font-semibold" data-i18n="about.title">
-          About me
-        </h2>
+      <BaseCard title="About me" i18n="about.title">
         <p>
           <span class="hl" data-i18n="about.p1_hl"
             >Higher Degree in Web Application Development (DAW, 2026)</span
@@ -199,14 +195,9 @@ const projects: Project[] = [
             problem-solving, and adaptability.</span
           >
         </p>
-      </div>
+      </BaseCard>
 
-      <div
-        class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.04)] p-6 transition-colors duration-200 hover:border-vblue/25"
-      >
-        <h2 class="m-0 mb-3 text-[2rem] font-semibold" data-i18n="stack.title">
-          Tech skills
-        </h2>
+      <BaseCard title="Tech skills" i18n="stack.title">
         <ul class="m-0 mt-4 flex list-none flex-wrap gap-2 p-0">
           {
             skills.map((skill) => (
@@ -227,7 +218,7 @@ const projects: Project[] = [
             ))
           }
         </ul>
-      </div>
+      </BaseCard>
     </section>
 
     <section

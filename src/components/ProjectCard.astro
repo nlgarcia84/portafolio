@@ -33,7 +33,7 @@ const { project, index = 0 } = Astro.props;
     width={800}
     height={450}
     loading="lazy"
-    class="aspect-[16/9] w-full object-cover object-top brightness-[0.7] transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-100"
+    class="aspect-[16/9] w-full object-cover object-top brightness-[0.55] transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-100"
   />
   <div class="p-5">
     <h3
@@ -89,17 +89,14 @@ const { project, index = 0 } = Astro.props;
       )
     }
     <a
-      class="group/btn relative mt-6 flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:scale-[1.02] hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98]"
+      class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_20px_rgba(59,130,246,0.35)]"
       href={project.href}
       target="_blank"
       rel="noopener"
     >
-      <span
-        class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-      ></span>
-      <span class="relative" data-i18n="projects.link"> Visit project </span>
+      <span data-i18n="projects.link"> Visit project </span>
       <svg
-        class="relative h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1"
+        class="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
