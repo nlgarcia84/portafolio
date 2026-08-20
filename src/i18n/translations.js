@@ -30,10 +30,9 @@ export default {
     "projects.t1.title": "Roomy — App de reservas",
     "projects.t1.desc":
       "Proyecto final de DAW en grupo de 4 desarrolladores. Junto con un compañero me encargué del frontend con Next.js y Tailwind. Aplicación web de reserva de salas de reuniones con backend en Spring Boot y Supabase.",
-    "projects.t2.title":
-      "Sheij Khaled Huerta — Plataforma de Educación Islámica",
+    "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
-      "Plataforma web dedicada a la enseñanza y difusión del islam en español, con contenido educativo, artículos, conferencias de audio, jutbas, una biblioteca y un calendario de eventos.",
+      "SaaS para la gestión de la reputación online. Automatiza las solicitudes de reseñas de Google mediante códigos QR, email y factura, y responde cada reseña con respuestas personalizadas generadas por IA, con analítica y seguimiento de tendencias de puntuación.",
     "contact.title": "Contacto",
     "contact.text": "¿Quieres contactarme? Escríbeme a",
   },
@@ -68,9 +67,9 @@ export default {
     "projects.t1.title": "Roomy — App de reserves",
     "projects.t1.desc":
       "Projecte final de DAW en grup de 4 desenvolupadors. Amb un company em vaig encarregar del frontend amb Next.js i Tailwind. Aplicació web de reserva de sales de reunions amb backend en Spring Boot i Supabase.",
-    "projects.t2.title": "Sheij Khaled Huerta — Plataforma d'Educació Islàmica",
+    "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
-      "Plataforma web dedicada a l'ensenyament i difusió de l'islam en castellà, amb contingut educatiu, articles, conferències d'àudio, khutbes, una biblioteca i un calendari d'esdeveniments.",
+      "SaaS per a la gestió de la reputació online. Automatitza les sol·licituds de ressenyes de Google mitjançant codis QR, correu i factura, i respon cada ressenya amb respostes personalitzades generades per IA, amb analítica i seguiment de tendències de puntuació.",
     "contact.title": "Contacte",
     "contact.text": "Vols contactar-me? Escriu-me a",
   },
@@ -104,9 +103,9 @@ export default {
     "projects.t1.title": "Roomy — Booking app",
     "projects.t1.desc":
       "Final DAW project in a group of 4 developers. With a teammate I was in charge of the frontend with Next.js and Tailwind. Web app for booking meeting rooms with a Spring Boot and Supabase backend.",
-    "projects.t2.title": "Sheij Khaled Huerta — Islamic Education Platform",
+    "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
-      "Web platform dedicated to the teaching and dissemination of Islam in Spanish, featuring educational content, articles, audio lectures, khutbahs, a library, and an events calendar.",
+      "SaaS for online reputation management. Automates Google review requests via QR codes, email and invoices, and replies to every review with AI-generated, personalized responses, backed by analytics and score trend tracking.",
     "contact.title": "Contact",
     "contact.text": "Want to get in touch? Email me at",
   },
