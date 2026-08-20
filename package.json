@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "format": "prettier --write \"src/**/*.{astro,js,css}\"",
+    "format:check": "prettier --check \"src/**/*.{astro,js,css}\"",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,5 +17,9 @@
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.2",
     "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
