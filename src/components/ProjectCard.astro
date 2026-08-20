@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 type Project = {
-  image?: string;
+  image: ImageMetadata;
   title: string;
   description: string;
   stack: string[];
@@ -16,51 +19,61 @@ const { project, index = 0 } = Astro.props;
 ---
 
 <article
-  class="group tilt-card rounded-[12px] border border-white/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-vblue/25"
+  class="group tilt-card overflow-hidden rounded-[12px] border border-white/10 bg-white/[0.02] transition-colors duration-200 hover:border-vblue/25"
 >
-  <h3
-    class="m-0 mb-1.5 text-[1rem] font-semibold"
-    data-i18n={`projects.t${index}.title`}
-  >
-    {project.title}
-  </h3>
-  <p
-    class="m-0 text-[0.9rem] leading-relaxed text-muted"
-    data-i18n={`projects.t${index}.desc`}
-  >
-    {project.description}
-  </p>
-  <ul class="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
-    {
-      project.stack.map((item) => (
-        <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
-          {item}
-        </li>
-      ))
-    }
-  </ul>
-  <a
-    class="group/btn relative mt-6 flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:scale-[1.02] hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98]"
-    href={project.href}
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-      class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-    ></span>
-    <span class="relative" data-i18n="projects.link"> Visit project </span>
-    <svg
-      class="relative h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
+  <Image
+    src={project.image}
+    alt={`${project.title} screenshot`}
+    width={800}
+    height={450}
+    loading="lazy"
+    class="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+  />
+  <div class="p-5">
+    <h3
+      class="m-0 mb-1.5 text-[1rem] font-semibold"
+      data-i18n={`projects.t${index}.title`}
     >
-      <path d="M7 17L17 7"></path>
-      <path d="M7 7h10v10"></path>
-    </svg>
-  </a>
+      {project.title}
+    </h3>
+    <p
+      class="m-0 text-[0.9rem] leading-relaxed text-muted"
+      data-i18n={`projects.t${index}.desc`}
+    >
+      {project.description}
+    </p>
+    <ul class="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
+      {
+        project.stack.map((item) => (
+          <li class="inline-flex items-center gap-1.5 rounded-md border border-vblue/10 bg-vblue/10 px-2.5 py-1 text-sm font-medium text-vblue-light">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      class="group/btn relative mt-6 flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:scale-[1.02] hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98]"
+      href={project.href}
+      target="_blank"
+      rel="noopener"
+    >
+      <span
+        class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+      ></span>
+      <span class="relative" data-i18n="projects.link"> Visit project </span>
+      <svg
+        class="relative h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 17L17 7"></path>
+        <path d="M7 7h10v10"></path>
+      </svg>
+    </a>
+  </div>
 </article>

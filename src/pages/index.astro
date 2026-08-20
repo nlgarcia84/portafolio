@@ -2,6 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import normanphoto from "../assets/norman_photo.png";
+import type { ImageMetadata } from "astro";
+import khaledphoto from "../assets/projects/khaledhuerta.png";
+import rctechnologyphoto from "../assets/projects/rctechnology.png";
+import revlyphoto from "../assets/projects/revlyapp.png";
+import roomyphoto from "../assets/projects/roomyapp.png";
 import ProjectCard from "../components/ProjectCard.astro";
 
 type Skill = {
@@ -27,7 +32,7 @@ const skills: Skill[] = [
 ];
 
 type Project = {
-  image?: string;
+  image: ImageMetadata;
   title: string;
   description: string;
   stack: string[];
@@ -36,6 +41,7 @@ type Project = {
 
 const projects: Project[] = [
   {
+    image: rctechnologyphoto,
     title: "Corporate Website — RC Technology",
     description:
       "Corporate website developed during my Fullstack Developer internship. Built with Astro and Tailwind, backend with Supabase.",
@@ -43,6 +49,7 @@ const projects: Project[] = [
     href: "https://www.rctechnology.es/",
   },
   {
+    image: roomyphoto,
     title: "Roomy — Booking app",
     description:
       "Final DAW project in a group of 4 developers. With a teammate I was in charge of the frontend with Next.js and Tailwind. Web app for booking meeting rooms with a Spring Boot and Supabase backend.",
@@ -50,6 +57,7 @@ const projects: Project[] = [
     href: "https://reservesapp-frontend.vercel.app/",
   },
   {
+    image: revlyphoto,
     title: "Revly — SaaS",
     description:
       "SaaS for online reputation management. Automates Google review requests via QR codes, email and invoices, and replies to every review with AI-generated, personalized responses, backed by analytics and score trend tracking.",
@@ -57,6 +65,7 @@ const projects: Project[] = [
     href: "https://revly.es/",
   },
   {
+    image: khaledphoto,
     title: "Sheij Khaled Huerta — Islamic Education Platform",
     description:
       "Web platform dedicated to the teaching and dissemination of Islam in Spanish, featuring educational content, articles, audio lectures, khutbahs, a library, and an events calendar.",
@@ -110,8 +119,8 @@ const projects: Project[] = [
         </h1>
         <p class="mt-5 max-w-[58ch] text-[1.05rem] leading-relaxed text-muted">
           <span data-i18n="hero.lead1"
-            >Junior Fullstack Web Developer transitioning to tech in 2022.
-            Experience in frontend and backend with</span
+            >Fullstack Web Developer transitioning to tech in 2022. Experience
+            in frontend and backend with</span
           >
           <span class="hl">JavaScript</span>,
           <span class="hl">React</span>
