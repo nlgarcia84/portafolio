@@ -218,7 +218,7 @@ const projects: Project[] = [
       <div class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           projects.map((project, i) => (
-            <article class="tilt-card rounded-[12px] border border-white/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-vblue/25">
+            <article class="group tilt-card rounded-[12px] border border-white/10 bg-white/[0.02] p-5 transition-colors duration-200 hover:border-vblue/25">
               <h3
                 class="m-0 mb-1.5 text-[1rem] font-semibold"
                 data-i18n={`projects.t${i}.title`}
@@ -239,13 +239,25 @@ const projects: Project[] = [
                 ))}
               </ul>
               <a
-                class="mt-3 inline-block text-[0.85rem] font-medium text-muted no-underline transition-colors hover:text-vblue-light"
+                class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-vblue/40 bg-vblue/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-200 hover:border-vblue hover:bg-vblue/25 hover:shadow-[0_0_20px_rgba(99,102,241,0.35)]"
                 href={project.href}
                 target="_blank"
                 rel="noopener"
-                data-i18n="projects.link"
               >
-                Visit project
+                <span data-i18n="projects.link">Visit project</span>
+                <svg
+                  class="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </a>
             </article>
           ))
