@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "format": "prettier --write \"src/**/*.{astro,js,css}\"",
-    "format:check": "prettier --check \"src/**/*.{astro,js,css}\"",
+    "format": "prettier --write \"src/**/*.{astro,js,ts,css}\"",
+    "format:check": "prettier --check \"src/**/*.{astro,js,ts,css}\"",
     "preview": "astro preview",
     "astro": "astro"
   },
