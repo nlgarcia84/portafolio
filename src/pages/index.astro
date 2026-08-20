@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import normanphoto from "../assets/norman_photo.png";
-import type { ImageMetadata } from "astro";
 import khaledphoto from "../assets/projects/khaledhuerta.png";
 import rctechnologyphoto from "../assets/projects/rctechnology.png";
 import revlyphoto from "../assets/projects/revlyapp.png";
@@ -31,13 +30,7 @@ const skills: Skill[] = [
   { name: "OpenCode", icon: "devicon-vscode-plain" },
 ];
 
-type Project = {
-  image: ImageMetadata;
-  title: string;
-  description: string;
-  stack: string[];
-  href: string;
-};
+import type { Project } from "../types";
 
 const projects: Project[] = [
   {
