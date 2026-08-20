@@ -33,6 +33,10 @@ export default {
     "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
       "SaaS para la gestión de la reputación online. Automatiza las solicitudes de reseñas de Google mediante códigos QR, email y factura, y responde cada reseña con respuestas personalizadas generadas por IA, con analítica y seguimiento de tendencias de puntuación.",
+    "projects.t3.title":
+      "Sheij Khaled Huerta — Plataforma de Educación Islámica",
+    "projects.t3.desc":
+      "Plataforma web dedicada a la enseñanza y difusión del islam en español, con contenido educativo, artículos, conferencias de audio, jutbas, una biblioteca y un calendario de eventos.",
     "contact.title": "Contacto",
     "contact.text": "¿Quieres contactarme? Escríbeme a",
   },
@@ -70,6 +74,9 @@ export default {
     "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
       "SaaS per a la gestió de la reputació online. Automatitza les sol·licituds de ressenyes de Google mitjançant codis QR, correu i factura, i respon cada ressenya amb respostes personalitzades generades per IA, amb analítica i seguiment de tendències de puntuació.",
+    "projects.t3.title": "Sheij Khaled Huerta — Plataforma d'Educació Islàmica",
+    "projects.t3.desc":
+      "Plataforma web dedicada a l'ensenyament i difusió de l'islam en castellà, amb contingut educatiu, articles, conferències d'àudio, khutbes, una biblioteca i un calendari d'esdeveniments.",
     "contact.title": "Contacte",
     "contact.text": "Vols contactar-me? Escriu-me a",
   },
@@ -106,6 +113,9 @@ export default {
     "projects.t2.title": "Revly — SaaS",
     "projects.t2.desc":
       "SaaS for online reputation management. Automates Google review requests via QR codes, email and invoices, and replies to every review with AI-generated, personalized responses, backed by analytics and score trend tracking.",
+    "projects.t3.title": "Sheij Khaled Huerta — Islamic Education Platform",
+    "projects.t3.desc":
+      "Web platform dedicated to the teaching and dissemination of Islam in Spanish, featuring educational content, articles, audio lectures, khutbahs, a library, and an events calendar.",
     "contact.title": "Contact",
     "contact.text": "Want to get in touch? Email me at",
   },
