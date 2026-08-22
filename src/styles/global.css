@@ -67,13 +67,12 @@ body::before {
 }
 
 .neubox {
-  background: linear-gradient(145deg, #24242b, #101013);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, #1b1b21, #121215);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
-    10px 10px 26px rgba(0, 0, 0, 0.95),
-    -10px -10px 26px rgba(255, 255, 255, 0.07),
-    inset 2px 2px 6px rgba(255, 255, 255, 0.04),
-    inset -2px -2px 6px rgba(0, 0, 0, 0.6);
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition:
     box-shadow 0.3s ease,
     transform 0.3s ease;
@@ -81,8 +80,7 @@ body::before {
 
 .neubox:hover {
   box-shadow:
-    6px 6px 16px rgba(0, 0, 0, 0.85),
-    -6px -6px 16px rgba(255, 255, 255, 0.08),
-    inset 1px 1px 3px rgba(255, 255, 255, 0.03),
-    inset -1px -1px 3px rgba(0, 0, 0, 0.5);
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 16px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
