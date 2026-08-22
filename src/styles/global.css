@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #000;
+  --color-bg: #0b0b0f;
   --color-text: #fafafa;
   --color-muted: rgba(250, 250, 250, 0.6);
   --color-faint: rgba(250, 250, 250, 0.55);
-  --color-vblue: #0070f3;
-  --color-vblue-light: #3291ff;
-  --color-vpurple: #a78bfa;
-  --color-vpurple-soft: #7c6fdf;
-  --color-vorange: #fb923c;
-  --color-vyellow: #facc15;
+  --color-vblue: #bc52ee;
+  --color-vblue-light: #d391ff;
+  --color-vpurple: #bc52ee;
+  --color-vpurple-soft: #a855f7;
+  --color-vorange: #ff5d01;
+  --color-vyellow: #ffd60a;
 }
 
 body {
@@ -42,7 +42,7 @@ body::before {
   background: linear-gradient(
     110deg,
     var(--color-vpurple) 0%,
-    var(--color-vorange) 55%,
+    var(--color-vorange) 60%,
     var(--color-vyellow) 100%
   );
   -webkit-background-clip: text;
@@ -60,10 +60,10 @@ body::before {
 }
 
 .tilt-card:hover {
-  border-color: rgba(167, 139, 250, 0.3);
+  border-color: rgba(188, 82, 238, 0.3);
   box-shadow:
-    0 0 0 1px rgba(167, 139, 250, 0.08),
-    0 10px 32px rgba(167, 139, 250, 0.06);
+    0 0 0 1px rgba(188, 82, 238, 0.08),
+    0 10px 32px rgba(188, 82, 238, 0.06);
 }
 
 .neubox {
