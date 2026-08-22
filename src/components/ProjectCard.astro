@@ -43,12 +43,6 @@ const { project, index = 0 } = Astro.props;
       {project.title}
     </h3>
     <p
-      class="m-0 text-[0.9rem] leading-relaxed text-muted"
-      data-i18n={`projects.t${index}.desc`}
-    >
-      {project.description}
-    </p>
-    <p
       class="m-0 mb-1 mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted"
       data-i18n="projects.stack"
     >
@@ -59,7 +53,7 @@ const { project, index = 0 } = Astro.props;
         project.stack[group].length > 0 ? (
           <div class="mt-2">
             <p
-              class="m-0 mb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-vblue-light/80"
+              class="m-0 mb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-vpurple/80"
               data-i18n={`projects.stack.${group}`}
             >
               {group}
