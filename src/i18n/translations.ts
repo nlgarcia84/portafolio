@@ -6,10 +6,8 @@ const es = {
     "Portfolio de Norman Leyva García — Grado Superior en Desarrollo de Aplicaciones Web. React, Node.js, JavaScript, y más.",
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
-  "hero.lead1":
-    "Fullstack Web Developer con transición a tecnología en 2022. Experiencia en frontend y backend con",
-  "hero.lead2":
-    ", Node.js y APIs REST. Formación en Marketing y ADE con fuerte enfoque en el usuario.",
+  "hero.lead":
+    "Construyo apps web modernas y rápidas, de principio a fin.",
   "hero.btn.projects": "Ver proyectos",
   "hero.btn.contact": "Contactar",
   "about.title": "Sobre mí",
@@ -50,10 +48,8 @@ const ca = {
     "Portfolio de Norman Leyva García — Grau Superior en Desenvolupament d'Aplicacions Web. React, Node.js, JavaScript, i més.",
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
-  "hero.lead1":
-    "Fullstack Web Developer amb transició a tecnologia el 2022. Experiència en frontend i backend amb",
-  "hero.lead2":
-    ", Node.js i APIs REST. Formació en Màrqueting i ADE amb fort enfocament en l'usuari.",
+  "hero.lead":
+    "Construeixo apps web modernes i ràpides, de principi a fi.",
   "hero.btn.projects": "Veure projectes",
   "hero.btn.contact": "Contactar",
   "about.title": "Sobre mi",
@@ -95,10 +91,7 @@ const en = {
     "Portfolio of Norman Leyva García — Higher Degree in Web Application Development. React, Node.js, JavaScript, and more.",
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
-  "hero.lead1":
-    "Fullstack Web Developer transitioning to tech in 2022. Experience in frontend and backend with",
-  "hero.lead2":
-    ", Node.js and REST APIs. Background in Marketing and Business Management with a strong user focus.",
+  "hero.lead": "I build fast, modern web apps — end to end.",
   "hero.btn.projects": "View projects",
   "hero.btn.contact": "Contact",
   "about.title": "About me",

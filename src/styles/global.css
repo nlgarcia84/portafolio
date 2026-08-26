@@ -11,6 +11,7 @@
   --color-vpurple-soft: #a855f7;
   --color-vorange: #ff5d01;
   --color-vyellow: #ffd60a;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 body {
@@ -33,6 +34,41 @@ body::before {
   );
 }
 
+.sequence-canvas {
+  transform: scale(0.78);
+  transform-origin: center;
+  opacity: 0.42;
+  filter: blur(1.5px);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(
+    ellipse 43% 52% at 50% 43%,
+    #000 42%,
+    rgba(0, 0, 0, 0.9) 58%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 43% 52% at 50% 43%,
+    #000 42%,
+    rgba(0, 0, 0, 0.9) 58%,
+    transparent 78%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  will-change: transform, filter, opacity;
+}
+
+@media (min-width: 640px) {
+  .sequence-canvas {
+    transform: scale(0.84);
+  }
+}
+
+@media (min-width: 1280px) {
+  .sequence-canvas {
+    transform: scale(0.9);
+  }
+}
+
 .hl {
   color: var(--color-vpurple);
   font-weight: 500;
@@ -52,6 +88,7 @@ body::before {
 }
 
 .tilt-card {
+  overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition:

@@ -25,25 +25,25 @@ const { project, index = 0 } = Astro.props;
 ---
 
 <article
-  class="group neubox overflow-hidden rounded-[12px] transition-colors duration-200"
+  class="group neubox min-w-0 overflow-hidden rounded-[12px] transition-colors duration-200"
 >
   <Image
     src={project.image}
     alt={`${project.title} screenshot`}
-    width={800}
-    height={450}
+    width={1600}
+    height={900}
     loading="lazy"
     class="aspect-[16/9] w-full object-cover object-top brightness-[0.72] transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-100"
   />
-  <div class="p-6">
+  <div class="p-6 md:p-10">
     <h3
-      class="m-0 mb-1.5 text-[1rem] font-semibold"
+      class="m-0 mb-1.5 text-[1rem] font-semibold break-words md:mb-2 md:text-[1.5rem]"
       data-i18n={`projects.t${index}.title`}
     >
       {project.title}
     </h3>
     <p
-      class="m-0 mb-1 mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted"
+      class="m-0 mb-1 mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted md:text-[0.8rem]"
       data-i18n="projects.stack"
     >
       Tech Stack
@@ -53,7 +53,7 @@ const { project, index = 0 } = Astro.props;
         project.stack[group].length > 0 ? (
           <div class="mt-2">
             <p
-              class="m-0 mb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-vpurple/80"
+              class="m-0 mb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-vpurple/80 md:text-[0.75rem]"
               data-i18n={`projects.stack.${group}`}
             >
               {group}
@@ -61,7 +61,7 @@ const { project, index = 0 } = Astro.props;
             <ul class="m-0 flex list-none flex-wrap gap-1.5 p-0">
               {project.stack[group].map((item) => (
                 <li
-                  class="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[0.75rem] font-medium text-text/80"
+                  class="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[0.75rem] font-medium text-text/80 md:px-2.5 md:py-1.5 md:text-[0.85rem]"
                   title={item}
                 >
                   {stackIcons[item] && (
@@ -70,7 +70,7 @@ const { project, index = 0 } = Astro.props;
                       alt=""
                       width="14"
                       height="14"
-                      class="h-[14px] w-[14px] shrink-0"
+                      class="h-[14px] w-[14px] shrink-0 md:h-4 md:w-4"
                       loading="lazy"
                     />
                   )}
@@ -83,7 +83,7 @@ const { project, index = 0 } = Astro.props;
       )
     }
     <a
-      class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-vpurple/40 bg-vpurple/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:border-vpurple hover:bg-vpurple/25 hover:shadow-[0_0_20px_rgba(188,82,238,0.35)]"
+      class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-vpurple/40 bg-vpurple/10 px-4 py-2.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:border-vpurple hover:bg-vpurple/25 hover:shadow-[0_0_20px_rgba(188,82,238,0.35)] md:mt-8 md:px-6 md:py-3 md:text-[1rem]"
       href={project.href}
       target="_blank"
       rel="noopener"
