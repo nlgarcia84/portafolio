@@ -1,51 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/500.css";
-import "@fontsource/jetbrains-mono/600.css";
-import "@fontsource/jetbrains-mono/700.css";
 import khaledhuerta from "../assets/projects/khaledhuerta.png";
 import rctechnology from "../assets/projects/rctechnology.png";
 import revly from "../assets/projects/revlyapp.png";
 import roomy from "../assets/projects/roomyapp.png";
 import ProjectCard from "../components/ProjectCard.astro";
 import BaseCard from "../components/BaseCard.astro";
+import portrait from "../assets/norman_photo.png";
+import Badge from "../components/ui/Badge.astro";
+import Button from "../components/ui/Button.astro";
+import translations from "../i18n/translations";
 import type { Project } from "../types";
 
-type Skill = {
-  name: string;
-  icon: string;
-};
-
-const skills: Skill[] = [
-  { name: "Astro", icon: "/icons/astro-original.svg" },
-  { name: "HTML5", icon: "/icons/html5-original.svg" },
-  { name: "CSS3", icon: "/icons/css3-original.svg" },
-  { name: "JavaScript", icon: "/icons/javascript-original.svg" },
-  { name: "TypeScript", icon: "/icons/typescript-original.svg" },
-  { name: "React", icon: "/icons/react-original.svg" },
-  { name: "Node.js", icon: "/icons/nodejs-plain.svg" },
-  { name: "Express", icon: "/icons/express-original.svg" },
-  { name: "MySQL", icon: "/icons/mysql-original.svg" },
-  { name: "MongoDB", icon: "/icons/mongodb-plain.svg" },
-  { name: "Next.js", icon: "/icons/nextjs-original.svg" },
-  { name: "Tailwind CSS", icon: "/icons/tailwindcss-original.svg" },
-  { name: "Supabase", icon: "/icons/supabase-original.svg" },
-  { name: "Git/GitHub", icon: "/icons/github-original.svg" },
-  { name: "REST APIs", icon: "/icons/postman-original.svg" },
-  { name: "Responsive Design", icon: "/icons/chrome-original.svg" },
-  { name: "Agile", icon: "/icons/jira-original.svg" },
-  { name: "GitHub Copilot", icon: "/icons/github-original.svg" },
-  { name: "OpenCode", icon: "/icons/vscode-original.svg" },
+const skills = [
+  "Astro",
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Node.js",
+  "Express",
+  "MySQL",
+  "MongoDB",
+  "Next.js",
+  "Tailwind CSS",
+  "Supabase",
+  "Git/GitHub",
+  "REST APIs",
+  "Responsive Design",
+  "Agile",
+  "GitHub Copilot",
+  "OpenCode",
 ];
 
 const projects: Project[] = [
   {
     image: rctechnology,
-    title: "Corporate Website — RC Technology",
-    description:
-      "Corporate website developed during my Fullstack Developer internship. Built with Astro and Tailwind, backend with Supabase.",
     stack: {
       frontend: ["Astro", "Tailwind", "TypeScript"],
       backend: ["Supabase"],
@@ -55,9 +47,6 @@ const projects: Project[] = [
   },
   {
     image: roomy,
-    title: "Roomy — Booking app",
-    description:
-      "Final DAW project in a group of 4 developers. With a teammate I was in charge of the frontend with Next.js and Tailwind. Web app for booking meeting rooms with a Spring Boot and Supabase backend.",
     stack: {
       frontend: ["Next.js", "Tailwind", "TypeScript"],
       backend: ["Spring Boot", "Java", "Supabase"],
@@ -67,9 +56,6 @@ const projects: Project[] = [
   },
   {
     image: revly,
-    title: "Revly — SaaS",
-    description:
-      "SaaS for online reputation management. Automates Google review requests via QR codes, email and invoices, and replies to every review with AI-generated, personalized responses, backed by analytics and score trend tracking.",
     stack: {
       frontend: ["Next.js", "Tailwind CSS", "TypeScript"],
       backend: ["Supabase"],
@@ -79,9 +65,6 @@ const projects: Project[] = [
   },
   {
     image: khaledhuerta,
-    title: "Sheij Khaled Huerta — Islamic Education Platform",
-    description:
-      "Web platform dedicated to the teaching and dissemination of Islam in Spanish, featuring educational content, articles, audio lectures, khutbahs, a library, and an events calendar.",
     stack: {
       frontend: ["Astro", "Tailwind CSS", "TypeScript"],
       backend: [],
@@ -90,491 +73,233 @@ const projects: Project[] = [
     href: "https://www.khaledhuerta.com/",
   },
 ];
+
+const { en } = translations;
+const languages = { es: "Español", ca: "Català", en: "English" };
 ---
 
-<Layout
-  title="Norman Leyva | Fullstack Developer"
-  description="Portfolio de Norman Leyva García — Grado Superior en Desarrollo de Aplicaciones Web. React, Node.js, JavaScript, y más."
->
-  <main>
-    <div class="fixed right-4 top-4 z-50 flex gap-2">
-      <button
-        class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light"
-        data-lang="es"
-        onclick="switchLang('es')">ES</button
+<Layout title={en["meta.title"]} description={en["meta.desc"]}>
+  <header class="border-b border-border">
+    <div
+      class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-3 sm:px-8"
+    >
+      <a
+        href="#inicio"
+        class="text-sm font-semibold uppercase tracking-[0.18em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
       >
-      <button
-        class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light"
-        data-lang="ca"
-        onclick="switchLang('ca')">CA</button
-      >
-      <button
-        class="lang-btn cursor-pointer rounded-md border border-[rgba(255,255,255,0.08)] bg-transparent px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-vblue/40 hover:text-vblue-light data-[active=true]:border-vblue/40 data-[active=true]:text-vblue-light"
-        data-lang="en"
-        onclick="switchLang('en')">EN</button
-      >
+        Norman Leyva
+      </a>
+      <div class="flex items-center gap-1">
+        {
+          Object.entries(languages).map(([lang, label]) => (
+            <Button
+              size="sm"
+              variant="ghost"
+              data-lang={lang}
+              lang={lang}
+              aria-label={label}
+              aria-pressed={lang === "en"}
+            >
+              {lang.toUpperCase()}
+            </Button>
+          ))
+        }
+      </div>
     </div>
+  </header>
 
-    <section id="pinSection" class="relative" style="height: 420vh">
-      <div
-        class="pin-stage sticky top-0 flex h-screen items-center justify-center overflow-hidden"
-      >
-        <canvas
-          data-el="sequence"
-          class="sequence-canvas absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"></canvas>
-        <div class="absolute inset-0 bg-black/65"></div>
-        <div class="relative z-10 flex flex-col items-center px-6 text-center">
-          <p
-            class="mb-4 font-mono text-base font-medium uppercase tracking-[0.12em] text-faint"
-            data-el="badge"
+  <main id="inicio" class="mx-auto max-w-6xl px-5 sm:px-8">
+    <section
+      class="grid items-center gap-8 border-b border-border py-12 sm:py-18 md:grid-cols-[1fr_minmax(0,20rem)] lg:py-22"
+      aria-labelledby="hero-title"
+    >
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-ring">
+          <span data-i18n="hero.role">{en["hero.role"]}</span><span
+            data-i18n="hero.eyebrow_suffix">{en["hero.eyebrow_suffix"]}</span
           >
-            <span class="hl">Fullstack Web Developer</span>
-          </p>
-          <h1
-            class="text-gradient m-0 text-[clamp(2.2rem,5vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]"
-            data-i18n="hero.title"
-            data-el="title"
+        </p>
+        <h1
+          id="hero-title"
+          class="mt-4 text-[clamp(3rem,8vw,6rem)] leading-[0.95] font-semibold tracking-[-0.065em]"
+          data-i18n="hero.title"
+        >
+          {en["hero.title"]}
+        </h1>
+        <p
+          class="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground"
+          data-i18n="hero.lead"
+        >
+          {en["hero.lead"]}
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <Button href="#proyectos" data-i18n="hero.btn.projects"
+            >{en["hero.btn.projects"]}</Button
           >
-            Norman Leyva
-          </h1>
-          <p
-            class="mt-5 max-w-[58ch] font-mono text-[1.2rem] font-medium leading-relaxed text-text/90"
-            data-el="lead"
+          <Button
+            href="#contacto"
+            variant="outline"
+            data-i18n="hero.btn.contact">{en["hero.btn.contact"]}</Button
           >
-            <span data-i18n="hero.lead"
-              >I build fast, modern web apps — end to end.</span
-            >
-          </p>
-          <div class="mt-8 flex flex-wrap justify-center gap-3" data-el="btns">
-            <a
-              class="rounded-full bg-white px-5 py-2.5 font-mono text-sm font-medium text-black no-underline transition-opacity hover:opacity-80"
-              href="#proyectos"
-              data-i18n="hero.btn.projects">View projects</a
-            >
-            <a
-              class="rounded-full border border-[rgba(255,255,255,0.15)] bg-transparent px-5 py-2.5 font-mono text-sm font-medium text-text no-underline transition-all hover:border-vblue/25 hover:bg-white/5"
-              href="#contacto"
-              data-i18n="hero.btn.contact">Contact</a
-            >
-          </div>
-          <p
-            class="mt-10 font-mono text-[0.7rem] uppercase tracking-[0.15em] text-faint"
-            data-el="hint"
-          >
-            scroll ↓
-          </p>
         </div>
+      </div>
+
+      <div
+        class="w-full max-w-64 overflow-hidden rounded-lg border border-border bg-card md:max-w-none"
+      >
+        <Image
+          src={portrait}
+          alt=""
+          width={640}
+          widths={[320, 640]}
+          sizes="(min-width: 768px) 320px, 256px"
+          format="webp"
+          loading="eager"
+          class="aspect-square w-full object-cover grayscale"
+        />
       </div>
     </section>
 
-    <div
-      class="mx-auto grid grid-cols-1 max-w-[1100px] gap-8 px-7 py-20 md:px-6 md:py-28"
+    <section
+      id="proyectos"
+      class="py-12 sm:py-16"
+      aria-labelledby="projects-title"
     >
-      <section class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <BaseCard title="About me" i18n="about.title">
+      <h2
+        id="projects-title"
+        class="mb-6 text-3xl font-semibold tracking-tight"
+        data-i18n="projects.title"
+      >
+        {en["projects.title"]}
+      </h2>
+      <div class="grid gap-5 md:grid-cols-2">
+        {
+          projects.map((project, index) => (
+            <ProjectCard project={project} index={index} />
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="grid gap-5 pb-12 md:grid-cols-2 sm:pb-16">
+      <BaseCard title={en["about.title"]} i18n="about.title">
+        <div class="space-y-3 leading-relaxed text-muted-foreground">
           <p>
-            <span class="hl" data-i18n="about.p1_hl"
-              >Higher Degree in Web Application Development (DAW, 2026)</span
-            >
-            <span data-i18n="about.p1_rest">
-              at Institut Obert de Catalunya.</span
-            >
+            <strong class="font-medium text-foreground" data-i18n="about.p1_hl"
+              >{en["about.p1_hl"]}</strong
+            ><span data-i18n="about.p1_rest">{en["about.p1_rest"]}</span>
           </p>
-          <p class="mt-3 leading-relaxed text-muted" data-i18n="about.p2">
-            Graduated in Business Management and Digital Marketing, though I
-            ultimately did not practice. I moved into tech through a bootcamp at
-            Ironhack and later specialized in web development. My management and
-            marketing background gives me a strategic, user-centered
-            perspective.
-          </p>
-          <p class="mt-3 leading-relaxed text-muted">
-            <span data-i18n="about.p3_pre">My</span>
-            <span class="hl" data-i18n="about.p3_hl">42 years</span>
-            <span data-i18n="about.p3_post">
-              have developed soft skills such as communication, teamwork,
-              problem-solving, and adaptability.</span
-            >
-          </p>
-        </BaseCard>
-
-        <BaseCard title="Tech skills" i18n="stack.title">
-          <ul class="m-0 mt-4 flex list-none flex-wrap gap-2 p-0">
-            {
-              skills.map((skill) => (
-                <li
-                  class="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1.5 text-sm font-medium text-text/80"
-                  title={skill.name}
-                >
-                  <img
-                    src={skill.icon}
-                    alt=""
-                    width="16"
-                    height="16"
-                    class="h-4 w-4 shrink-0"
-                    loading="lazy"
-                  />
-                  {skill.name}
-                </li>
-              ))
-            }
-          </ul>
-        </BaseCard>
-      </section>
-
-      <section
-        id="proyectos"
-        class="tilt-card min-w-0 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-8 pb-16 transition-colors duration-200 hover:border-vblue/25"
-      >
-        <h2
-          class="text-gradient m-0 mb-3 text-[2rem] font-semibold"
-          data-i18n="projects.title"
-        >
-          Projects
-        </h2>
-        <div class="mt-3 grid grid-cols-1 gap-6 min-w-0 md:gap-8">
-          {
-            projects.map((project, i) => (
-              <ProjectCard project={project} index={i} />
-            ))
-          }
-        </div>
-      </section>
-
-      <section
-        id="contacto"
-        class="tilt-card flex flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-8 transition-colors duration-200 hover:border-vblue/25"
-      >
-        <div>
-          <h2
-            class="text-gradient m-0 mb-3 text-[2rem] font-semibold"
-            data-i18n="contact.title"
-          >
-            Contact
-          </h2>
-          <p class="m-0 max-w-[60ch] leading-relaxed text-muted">
-            <span data-i18n="contact.text"
-              >Want to get in touch? Email me at</span
-            >
-            <a
-              class="text-muted no-underline transition-colors hover:text-vblue-light"
-              href="mailto:nleyvagarcia1@icloud.com">nleyvagarcia1@icloud.com</a
-            >.
+          <p data-i18n="about.p2">{en["about.p2"]}</p>
+          <p>
+            <span data-i18n="about.p3_pre">{en["about.p3_pre"]}</span>
+            <strong class="font-medium text-foreground" data-i18n="about.p3_hl"
+              >{en["about.p3_hl"]}</strong
+            ><span data-i18n="about.p3_post">{en["about.p3_post"]}</span>
           </p>
         </div>
-        <div class="flex gap-3">
-          <a
-            class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-vblue/40 hover:text-vblue-light"
-            href="https://linkedin.com/in/norman-leyva"
-            target="_blank"
-            rel="noopener">LinkedIn</a
-          >
-          <a
-            class="rounded-md border border-[rgba(255,255,255,0.06)] px-3 py-2 text-sm font-medium text-muted no-underline transition-colors hover:border-vblue/40 hover:text-vblue-light"
-            href="https://github.com/nlgarcia84"
-            target="_blank"
-            rel="noopener">GitHub</a
-          >
-        </div>
-      </section>
+      </BaseCard>
+
+      <BaseCard title={en["stack.title"]} i18n="stack.title">
+        <ul class="flex flex-wrap gap-2">
+          {skills.map((skill) => <Badge as="li">{skill}</Badge>)}
+        </ul>
+      </BaseCard>
     </div>
   </main>
+
+  <footer id="contacto" class="border-t border-border">
+    <div
+      class="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-5 px-5 py-8 sm:px-8"
+    >
+      <div class="min-w-0">
+        <h2
+          class="text-xl font-semibold tracking-tight"
+          data-i18n="contact.title"
+        >
+          {en["contact.title"]}
+        </h2>
+        <p class="mt-2 leading-relaxed text-muted-foreground">
+          <span data-i18n="contact.text">{en["contact.text"]}</span>
+          <a
+            class="break-words text-foreground underline decoration-border underline-offset-4 hover:decoration-ring focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+            href="mailto:nleyvagarcia1@icloud.com">nleyvagarcia1@icloud.com</a
+          >
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <Button
+          size="sm"
+          variant="outline"
+          href="https://linkedin.com/in/norman-leyva"
+          target="_blank"
+          rel="noopener">LinkedIn</Button
+        >
+        <Button
+          size="sm"
+          variant="outline"
+          href="https://github.com/nlgarcia84"
+          target="_blank"
+          rel="noopener">GitHub</Button
+        >
+      </div>
+    </div>
+  </footer>
 </Layout>
+
 <script>
-  import translations from "../i18n/translations.ts";
-  import type { Lang, TranslationKey } from "../i18n/translations.ts";
+  import translations, {
+    type Lang,
+    type TranslationKey,
+  } from "../i18n/translations";
 
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  const buttons =
+    document.querySelectorAll<HTMLButtonElement>("button[data-lang]");
+  const translated = document.querySelectorAll<HTMLElement>("[data-i18n]");
+  const description = document.querySelector<HTMLMetaElement>(
+    'meta[name="description"]',
+  );
 
-  function getDefaultLang(): Lang {
-    const stored = localStorage.getItem("lang");
-    return stored === "es" || stored === "ca" || stored === "en"
-      ? stored
-      : "en";
+  function isLanguage(value: string | null | undefined): value is Lang {
+    return value === "es" || value === "ca" || value === "en";
   }
 
-  let currentLang = getDefaultLang();
+  function applyLanguage(lang: Lang) {
+    const messages = translations[lang];
+    document.documentElement.lang = lang;
+    document.title = messages["meta.title"];
 
-  function switchLang(lang: Lang) {
-    currentLang = lang;
+    if (description) {
+      description.content = messages["meta.desc"];
+    }
 
-    localStorage.setItem("lang", lang);
+    for (const element of translated) {
+      const key = element.dataset.i18n as TranslationKey;
+      element.textContent = messages[key];
+    }
 
-    applyLang(lang);
-    updateLangButtons(lang);
+    for (const button of buttons) {
+      button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+    }
   }
 
-  function applyLang(lang: Lang) {
-    const t = translations[lang];
+  try {
+    const saved = localStorage.getItem("lang");
+    if (isLanguage(saved) && saved !== "en") applyLanguage(saved);
+  } catch {
+    // Some browser privacy settings block local storage.
+  }
 
-    document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
-      const key = el.dataset.i18n as TranslationKey | undefined;
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      const lang = button.dataset.lang;
+      if (!isLanguage(lang)) return;
 
-      if (key && t[key]) {
-        el.textContent = t[key];
+      applyLanguage(lang);
+      try {
+        localStorage.setItem("lang", lang);
+      } catch {
+        // The language still applies for this page.
       }
     });
-
-    document.title = t["meta.title"];
-
-    const description = document.querySelector('meta[name="description"]');
-
-    if (description instanceof HTMLMetaElement) {
-      description.content = t["meta.desc"];
-    }
   }
-
-  function updateLangButtons(lang: Lang) {
-    document.querySelectorAll<HTMLButtonElement>(".lang-btn").forEach((btn) => {
-      btn.dataset.active = btn.dataset.lang === lang ? "true" : "false";
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    applyLang(currentLang);
-    updateLangButtons(currentLang);
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (reduceMotion) return;
-
-    /*
-    ==========================================
-    CANVAS
-    ==========================================
-    */
-
-    const canvas = document.querySelector<HTMLCanvasElement>(
-      '[data-el="sequence"]',
-    );
-
-    if (!canvas) {
-      console.error('No se encontró <canvas data-el="sequence">');
-      return;
-    }
-
-    const context = canvas.getContext("2d");
-
-    if (!context) {
-      console.error("No se pudo crear el contexto 2D del canvas");
-      return;
-    }
-
-    const canvasElement = canvas;
-    const canvasContext = context;
-
-    /*
-    ==========================================
-    CONFIGURACIÓN
-    ==========================================
-    */
-
-    const frameCount = 63;
-
-    const framePath = (index: number) =>
-      `/frames/frame_${String(index + 1).padStart(5, "0")}.jpg`;
-
-    const images: HTMLImageElement[] = [];
-
-    const sequence = {
-      frame: 0,
-    };
-
-    /*
-    ==========================================
-    CARGAR IMÁGENES
-    ==========================================
-    */
-
-    for (let i = 0; i < frameCount; i++) {
-      const img = new Image();
-
-      img.src = framePath(i);
-
-      images.push(img);
-    }
-
-    /*
-    ==========================================
-    RENDER
-    ==========================================
-    */
-
-    function renderFrame() {
-      const index = Math.round(sequence.frame);
-      const img = images[index];
-
-      if (!img || !img.complete || !img.naturalWidth) {
-        return;
-      }
-
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      const imageRatio = img.naturalWidth / img.naturalHeight;
-
-      const canvasRatio = width / height;
-
-      let drawWidth;
-      let drawHeight;
-      let offsetX;
-      let offsetY;
-
-      /*
-      ------------------------------------------
-      COVER
-      ------------------------------------------
-      */
-
-      if (canvasRatio > imageRatio) {
-        drawWidth = width;
-        drawHeight = width / imageRatio;
-
-        offsetX = 0;
-        offsetY = (height - drawHeight) / 2;
-      } else {
-        drawHeight = height;
-        drawWidth = height * imageRatio;
-
-        offsetX = (width - drawWidth) / 2;
-        offsetY = 0;
-      }
-
-      /*
-      ------------------------------------------
-      Canvas
-      ------------------------------------------
-      */
-
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-
-      canvasElement.width = Math.floor(width * pixelRatio);
-      canvasElement.height = Math.floor(height * pixelRatio);
-      canvasContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-
-      canvasContext.clearRect(0, 0, width, height);
-
-      canvasContext.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-    }
-
-    /*
-    ==========================================
-    PRIMER FRAME
-    ==========================================
-    */
-
-    images[0].addEventListener("load", () => {
-      renderFrame();
-    });
-
-    /*
-    ==========================================
-    RESIZE
-    ==========================================
-    */
-
-    window.addEventListener("resize", () => {
-      renderFrame();
-    });
-
-    /*
-    ==========================================
-    PRELOAD
-    ==========================================
-    */
-
-    images.forEach((img, index) => {
-      img.addEventListener("error", () => {
-        console.error(`No se pudo cargar el frame ${index + 1}:`, img.src);
-      });
-    });
-
-    /*
-    ==========================================
-    TIMELINE PRINCIPAL
-    ==========================================
-    */
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#pinSection",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.6,
-        pin: ".pin-stage",
-      },
-
-      defaults: {
-        ease: "power2.out",
-      },
-    });
-
-    tl.fromTo(
-      canvasElement,
-      { opacity: 0, rotation: -8 },
-      { opacity: 0.42, rotation: 0, duration: 1, ease: "power2.out" },
-    )
-      .from('[data-el="badge"]', { y: 28, opacity: 0, duration: 0.7 }, "<0.2")
-      .from('[data-el="title"]', { y: 42, opacity: 0, duration: 0.8 }, "<0.12")
-      .from('[data-el="lead"]', { y: 30, opacity: 0, duration: 0.7 }, "<0.12")
-      .from('[data-el="btns"]', { y: 24, opacity: 0, duration: 0.6 }, "<0.12")
-      .from('[data-el="hint"]', { opacity: 0, duration: 0.5 }, "<0.12")
-      .to(
-        sequence,
-        {
-          frame: frameCount - 1,
-          duration: 4,
-          ease: "none",
-          snap: "frame",
-          onUpdate: renderFrame,
-        },
-        "<0.1",
-      )
-      .to(canvasElement, { rotation: 8, duration: 4, ease: "none" }, "<")
-      .to(canvasElement, { opacity: 0, rotation: 12, duration: 1 }, ">-0.2");
-
-    /*
-    ==========================================
-    PROYECTOS
-    ==========================================
-    */
-
-    gsap.from("#proyectos h2", {
-      scrollTrigger: {
-        trigger: "#proyectos",
-        start: "top 80%",
-      },
-
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-    });
-
-    gsap.from("#proyectos article", {
-      scrollTrigger: {
-        trigger: "#proyectos",
-        start: "top 75%",
-      },
-
-      y: 24,
-      opacity: 0,
-      stagger: 0.15,
-      duration: 0.9,
-      ease: "power3.out",
-    });
-  });
-
-  declare global {
-    interface Window {
-      switchLang: (lang: Lang) => void;
-    }
-  }
-
-  window.switchLang = switchLang;
 </script>

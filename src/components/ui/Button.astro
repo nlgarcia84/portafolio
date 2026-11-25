@@ -1,0 +1,45 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = (
+  | (HTMLAttributes<"a"> & { href: string })
+  | (HTMLAttributes<"button"> & { href?: never })
+) & {
+  variant?: "default" | "outline" | "ghost";
+  size?: "default" | "sm";
+  "data-i18n"?: string;
+  "data-lang"?: string;
+};
+
+const {
+  href,
+  variant = "default",
+  size = "default",
+  class: className,
+  ...attrs
+} = Astro.props;
+const Tag = href === undefined ? "button" : "a";
+const variants = {
+  default:
+    "border-primary bg-primary text-primary-foreground hover:bg-primary/85",
+  outline:
+    "border-border bg-transparent text-foreground hover:border-ring hover:bg-accent",
+  ghost:
+    "border-transparent text-muted-foreground hover:bg-accent hover:text-foreground aria-pressed:bg-accent aria-pressed:text-foreground",
+};
+---
+
+<Tag
+  data-slot="button"
+  href={href}
+  type={Tag === "button" ? "button" : undefined}
+  class:list={[
+    "inline-flex cursor-pointer items-center justify-center rounded-md border font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring",
+    size === "sm" ? "min-h-10 px-3 text-sm" : "min-h-11 px-4 text-sm",
+    variants[variant],
+    className,
+  ]}
+  {...attrs}
+>
+  <slot />
+</Tag>

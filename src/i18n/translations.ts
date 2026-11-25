@@ -1,13 +1,13 @@
 export type Lang = "es" | "ca" | "en";
 
 const es = {
+  "hero.role": "Desarrollador web full stack",
   "meta.title": "Norman Leyva | Fullstack Developer",
   "meta.desc":
     "Portfolio de Norman Leyva García — Grado Superior en Desarrollo de Aplicaciones Web. React, Node.js, JavaScript, y más.",
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
-  "hero.lead":
-    "Construyo apps web modernas y rápidas, de principio a fin.",
+  "hero.lead": "Construyo apps web modernas y rápidas, de principio a fin.",
   "hero.btn.projects": "Ver proyectos",
   "hero.btn.contact": "Contactar",
   "about.title": "Sobre mí",
@@ -19,7 +19,7 @@ const es = {
   "about.p3_hl": "42 años",
   "about.p3_post":
     " me han desarrollado habilidades blandas como comunicación, trabajo en equipo, resolución de problemas y adaptabilidad.",
-  "stack.title": "Tech skills",
+  "stack.title": "Tecnologías",
   "projects.title": "Proyectos",
   "projects.link": "Visitar proyecto",
   "projects.stack": "Stack tecnológico",
@@ -43,13 +43,13 @@ const es = {
 };
 
 const ca = {
+  "hero.role": "Desenvolupador web full stack",
   "meta.title": "Norman Leyva | Fullstack Developer",
   "meta.desc":
     "Portfolio de Norman Leyva García — Grau Superior en Desenvolupament d'Aplicacions Web. React, Node.js, JavaScript, i més.",
   "hero.eyebrow_suffix": " · Barcelona",
   "hero.title": "Norman Leyva",
-  "hero.lead":
-    "Construeixo apps web modernes i ràpides, de principi a fi.",
+  "hero.lead": "Construeixo apps web modernes i ràpides, de principi a fi.",
   "hero.btn.projects": "Veure projectes",
   "hero.btn.contact": "Contactar",
   "about.title": "Sobre mi",
@@ -62,7 +62,7 @@ const ca = {
   "about.p3_hl": "42 anys",
   "about.p3_post":
     " m'han desenvolupat habilitats toves com comunicació, treball en equip, resolució de problemes i adaptabilitat.",
-  "stack.title": "Tech skills",
+  "stack.title": "Tecnologies",
   "projects.title": "Projectes",
   "projects.link": "Visitar projecte",
   "projects.stack": "Stack tecnològic",
@@ -86,6 +86,7 @@ const ca = {
 };
 
 const en = {
+  "hero.role": "Full-stack web developer",
   "meta.title": "Norman Leyva | Fullstack Developer",
   "meta.desc":
     "Portfolio of Norman Leyva García — Higher Degree in Web Application Development. React, Node.js, JavaScript, and more.",

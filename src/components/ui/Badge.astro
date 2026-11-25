@@ -1,0 +1,10 @@
+---
+const { as: Tag = "span" } = Astro.props as { as?: "span" | "li" };
+---
+
+<Tag
+  data-slot="badge"
+  class="inline-flex items-center rounded-md border border-border bg-background px-2.5 py-1 text-sm text-muted-foreground"
+>
+  <slot />
+</Tag>

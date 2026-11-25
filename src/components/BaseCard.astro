@@ -1,20 +1,21 @@
 ---
+import Card from "./ui/Card.astro";
+
 interface Props {
   title: string;
-  i18n?: string;
+  i18n: string;
 }
 
 const { title, i18n } = Astro.props;
 ---
 
-<div
-  class="tilt-card rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-8 transition-colors duration-200 hover:border-vblue/25"
->
+<Card class="gap-4 p-6 sm:p-8">
   <h2
-    class="text-gradient m-0 mb-3 text-[2rem] font-semibold"
-    {...i18n ? { "data-i18n": i18n } : {}}
+    data-slot="card-title"
+    class="text-xl font-semibold tracking-tight"
+    data-i18n={i18n}
   >
     {title}
   </h2>
-  <slot />
-</div>
+  <div data-slot="card-content"><slot /></div>
+</Card>

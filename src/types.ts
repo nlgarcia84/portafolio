@@ -8,8 +8,6 @@ export type StackGroup = {
 
 export type Project = {
   image: ImageMetadata;
-  title: string;
-  description: string;
   stack: StackGroup;
   href: string;
 };
